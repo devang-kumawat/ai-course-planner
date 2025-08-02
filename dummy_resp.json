@@ -1,0 +1,127 @@
+[
+  {
+    "w": 1,
+    "t": "Introduction to Data Science and Programming Basics",
+    "g": "Understand what data science is, its applications, and learn basic Python programming concepts essential for data science.",      
+    "a": [
+      {
+        "ti": "Data Science Tutorial for Beginners",
+        "u": "https://www.geeksforgeeks.org/data-science-tutorial/"
+      },
+      {
+        "ti": "Python Programming Language",
+        "u": "https://www.geeksforgeeks.org/python-programming-language/"
+      }
+    ],
+    "v": [
+      {
+        "ti": "Data Science Full Course - Learn Data Science in 10 Hours | Data Science Tutorial For Beginners | Edureka",
+        "u": "https://www.youtube.com/watch?v=ua-CiDNNj30"
+      },
+      {
+        "ti": "Python Tutorial for Beginners - Full Course in 11 Hours [2022]",
+        "u": "https://www.youtube.com/watch?v=_uQrJ0TkZlc"
+      }
+    ]
+  },
+  {
+    "w": 2,
+    "t": "Statistics and Probability Fundamentals",
+    "g": "Learn key statistical concepts and probability theory to analyze and interpret data effectively.",
+    "a": [
+      {
+        "ti": "Statistics for Data Science",
+        "u": "https://www.geeksforgeeks.org/statistics-for-data-science/"
+      },
+      {
+        "ti": "Probability Basics",
+        "u": "https://www.geeksforgeeks.org/probability-basics/"
+      }
+    ],
+    "v": [
+      {
+        "ti": "Statistics for Data Science | Full Course | Statistics Tutorial | Simplilearn",
+        "u": "https://www.youtube.com/watch?v=xxpc-HPKN28"
+      },
+      {
+        "ti": "Probability and Statistics for Data Science | Crash Course | Simplilearn",
+        "u": "https://www.youtube.com/watch?v=KbB0FjPg0IQ"
+      }
+    ]
+  },
+  {
+    "w": 3,
+    "t": "Data Analysis and Visualization",
+    "g": "Explore data manipulation using Pandas and NumPy, and learn to visualize data with Matplotlib and Seaborn.",
+    "a": [
+      {
+        "ti": "Pandas Tutorial for Beginners",
+        "u": "https://www.geeksforgeeks.org/python-pandas-tutorial/"
+      },
+      {
+        "ti": "Data Visualization with Matplotlib",
+        "u": "https://www.geeksforgeeks.org/data-visualization-with-matplotlib/"
+      }
+    ],
+    "v": [
+      {
+        "ti": "Python Pandas Tutorial (Data Analysis) | Data Science Tutorial | Edureka",
+        "u": "https://www.youtube.com/watch?v=vmEHCJofslg"
+      },
+      {
+        "ti": "Data Visualization with Matplotlib and Seaborn | Python Tutorial",
+        "u": "https://www.youtube.com/watch?v=0Lt9w-BxKFQ"
+      }
+    ]
+  },
+  {
+    "w": 4,
+    "t": "Introduction to Machine Learning",
+    "g": "Understand basic machine learning concepts including supervised and unsupervised learning techniques.",
+    "a": [
+      {
+        "ti": "Machine Learning Basics",
+        "u": "https://www.geeksforgeeks.org/machine-learning-basics/"
+      },
+      {
+        "ti": "Supervised vs Unsupervised Learning",
+        "u": "https://www.geeksforgeeks.org/supervised-vs-unsupervised-learning/"
+      }
+    ],
+    "v": [
+      {
+        "ti": "Machine Learning Full Course for Beginners | Machine Learning Tutorial | Edureka",
+        "u": "https://www.youtube.com/watch?v=Gv9_4yMHFhI"
+      },
+      {
+        "ti": "Supervised vs Unsupervised Learning | Machine Learning Tutorial | Simplilearn",
+        "u": "https://www.youtube.com/watch?v=3Z3h6XhG8h0"
+      }
+    ]
+  },
+  {
+    "w": 5,
+    "t": "Big Data Technologies and Tools",
+    "g": "Get introduced to big data concepts and tools like Hadoop and Spark used to handle large datasets.",
+    "a": [
+      {
+        "ti": "Introduction to Big Data",
+        "u": "https://www.geeksforgeeks.org/introduction-to-big-data/"
+      },
+      {
+        "ti": "Hadoop Tutorial for Beginners",
+        "u": "https://www.geeksforgeeks.org/hadoop-tutorial/"
+      }
+    ],
+    "v": [
+      {
+        "ti": "Big Data Full Course - Learn Big Data in 6 Hours | Big Data Tutorial | Edureka",
+        "u": "https://www.youtube.com/watch?v=5e6h1Zx0k7I"
+      },
+      {
+        "ti": "Hadoop Tutorial for Beginners | Big Data Tutorial | Simplilearn",
+        "u": "https://www.youtube.com/watch?v=2aYw4vR2o6g"
+      }
+    ]
+  }
+]
