@@ -63,7 +63,7 @@ export async function POST(req: NextRequest) {
 
     // Return valid quiz questions to the client
     return NextResponse.json({ questions });
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error("Quiz generation failed, falling back to defaults:", error);
 
     // Provide fallback questions if Perplexity API fails

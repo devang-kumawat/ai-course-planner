@@ -64,13 +64,30 @@ const CourseForm: React.FC = () => {
           setUsingDummy(false);
         }
         // Normalize backend format to the UI model
-        const normalized = data.plan.map((item: any) => ({
+        type PlanItem = {
+          w: number;
+          t: string;
+          g: string;
+          a: { ti: string; u: string }[];
+          v: { ti: string; u: string }[];
+        };
+
+        // Then use:
+        const normalized = data.plan.map((item: PlanItem) => ({
           week: item.w,
           title: item.t,
           goal: item.g,
-          articles: item.a.map((x: any) => ({ title: x.ti, url: x.u })),
-          videos: item.v.map((x: any) => ({ title: x.ti, url: x.u })),
+          articles: item.a.map((x: { ti: string; u: string }) => ({ title: x.ti, url: x.u })),
+          videos: item.v.map((x: { ti: string; u: string }) => ({ title: x.ti, url: x.u })),
         }));
+
+        // const normalized = data.plan.map((item: any) => ({
+        //   week: item.w,
+        //   title: item.t,
+        //   goal: item.g,
+        //   articles: item.a.map((x: any) => ({ title: x.ti, url: x.u })),
+        //   videos: item.v.map((x: any) => ({ title: x.ti, url: x.u })),
+        // }));
         setSchedule(normalized);
         setLoading(false);
       })
@@ -174,7 +191,7 @@ const CourseForm: React.FC = () => {
         </div>
       )}
       {/* Weekly Schedule */}
-      {!loading && schedule.length > 0 && (
+      {submitted && !loading && schedule.length > 0 && (
         <section className="max-w-7xl mx-auto p-6 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {/* Render one WeekCard per week, passing quiz state down */}
           {schedule.map((week) => (
