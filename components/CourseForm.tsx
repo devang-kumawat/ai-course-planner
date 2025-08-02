@@ -2,24 +2,30 @@
 import React, { useState } from "react";
 import WeekCard from "./WeekCard"; // Modular, renders each weekly card
 
-/**
- * Main form for collecting course schedule preferences and displaying weekly plan.
- */
-// Store quiz questions per week_topic key
+// -- Types --
+
+/** Structure of a quiz question for the cache */
 type Question = {
   id: number;
   question: string;
   choices: string[];
-  answer: number;
+  answer: number; // index in choices array
 };
+
+/** Structure of the quiz question cache; keys are week_topic strings */
 type QuizCache = { [key: string]: Question[] };
 
+/**
+ * Main form that collects user preferences and renders the weekly learning schedule.
+ * All app state (inputs, results, quiz cache) is managed here.
+ */
 const CourseForm: React.FC = () => {
-  // State for form inputs
+  // -- User input state --
   const [topic, setTopic] = useState("");
   const [proficiency, setProficiency] = useState("");
   const [duration, setDuration] = useState("");
-  // Controls when to display summary or results
+
+  // -- App UI state --
   const [submitted, setSubmitted] = useState(false);
   const [schedule, setSchedule] = useState<{
     week: number;
@@ -28,13 +34,20 @@ const CourseForm: React.FC = () => {
     articles: { title: string; url: string }[];
     videos: { title: string; url: string }[];
   }[]>([]);
+
   const [loading, setLoading] = useState(false);
+
+  // -- Quiz questions cache, scoped to this session's schedule --
   const [quizCache, setQuizCache] = useState<QuizCache>({});
 
-  // Handle form submit: fetch learning plan from backend
+  const[usingDummy, setUsingDummy] = useState(false);
+  /**
+   * On form submit, fetch the plan and reset quiz cache.
+   * Normalizes backend schedule data.
+   */
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setQuizCache({}); // Clear all cached quizzes when generating a new schedule
+    setQuizCache({}); // Invalidate all quiz caches for new schedule
     setSubmitted(true);
     setLoading(true);
 
@@ -45,22 +58,26 @@ const CourseForm: React.FC = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        // --- Normalization logic matches backend's plan format. Adjust if you change your backend keys! ---
+        if(data.usingDummy){
+          setUsingDummy(true);
+        } else {
+          setUsingDummy(false);
+        }
+        // Normalize backend format to the UI model
         const normalized = data.plan.map((item: any) => ({
-          week: item.w, // Ensure your backend returns .w, .t, .g, etc. (else change to item.week, etc.)
+          week: item.w,
           title: item.t,
           goal: item.g,
           articles: item.a.map((x: any) => ({ title: x.ti, url: x.u })),
           videos: item.v.map((x: any) => ({ title: x.ti, url: x.u })),
         }));
-        setQuizCache({}); // <-- Clear quizzes
-        console.log("Received weekly schedule plan from backend:", data);
         setSchedule(normalized);
         setLoading(false);
       })
       .catch(() => {
         setSchedule([]);
         setLoading(false);
+        setUsingDummy(false);
       });
   };
 
@@ -133,27 +150,7 @@ const CourseForm: React.FC = () => {
         </button>
       </form>
 
-      {/* ---------- User Input Summary (Commented out, can enable for UX) ---------- */}
-      {/* 
-      {submitted && (
-        <div className="w-full max-w-lg mt-8 mb-4 bg-gray-100 border-l-4 border-blue-500 rounded-xl p-4 shadow">
-          <h3 className="text-lg font-semibold text-gray-900 mb-1">Your Input</h3>
-          <div className="space-y-1 text-gray-800 text-base">
-            <div>
-              <span className="font-semibold">Topic:</span> {topic}
-            </div>
-            <div>
-              <span className="font-semibold">Proficiency:</span> {proficiency}
-            </div>
-            <div>
-              <span className="font-semibold">Duration:</span> {duration} weeks
-            </div>
-          </div>
-        </div>
-      )}
-      */}
-
-      {/* ---------- Loading Spinner ---------- */}
+      {/* Loading Spinner */}
       {loading && (
         <div className="mt-8 flex justify-center items-center">
           <div
@@ -168,16 +165,18 @@ const CourseForm: React.FC = () => {
             aria-label="Loading spinner"
             role="status"
           />
-          {/* 
-            Be sure to add this CSS globally (or in your main CSS):
-            @keyframes spin { to { transform: rotate(360deg); } }
-          */}
         </div>
       )}
 
-      {/* ---------- Display Generated Schedule as Responsive Cards ---------- */}
+      {usingDummy && (
+        <div className="max-w-lg mx-auto my-4 p-3 rounded-lg bg-yellow-100 border-l-4 border-yellow-400 text-yellow-800 font-semibold shadow-md">
+          ⚠️ Displaying dummy data because no valid Perplexity API key is configured on the backend.
+        </div>
+      )}
+      {/* Weekly Schedule */}
       {!loading && schedule.length > 0 && (
         <section className="max-w-7xl mx-auto p-6 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {/* Render one WeekCard per week, passing quiz state down */}
           {schedule.map((week) => (
             <WeekCard
               key={week.week}
@@ -186,7 +185,6 @@ const CourseForm: React.FC = () => {
               quizCache={quizCache}
               setQuizCache={setQuizCache}
             />
-
           ))}
         </section>
       )}

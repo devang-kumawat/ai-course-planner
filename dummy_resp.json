@@ -1,126 +1,151 @@
 [
   {
     "w": 1,
-    "t": "Introduction to Data Science and Programming Basics",
-    "g": "Understand what data science is, its applications, and learn basic Python programming concepts essential for data science.",      
+    "t": "Introduction to DSA and Logic Building",
+    "g": "Understand what DSA is and develop basic logic building skills essential for programming.",        
     "a": [
       {
-        "ti": "Data Science Tutorial for Beginners",
-        "u": "https://www.geeksforgeeks.org/data-science-tutorial/"
+        "ti": "DSA Tutorial - Learn Data Structures and Algorithms",
+        "u": "https://www.geeksforgeeks.org/dsa/dsa-tutorial-learn-data-structures-and-algorithms/"
       },
       {
-        "ti": "Python Programming Language",
-        "u": "https://www.geeksforgeeks.org/python-programming-language/"
+        "ti": "Logic Building",
+        "u": "https://www.geeksforgeeks.org/logic-building/"
       }
     ],
     "v": [
       {
-        "ti": "Data Science Full Course - Learn Data Science in 10 Hours | Data Science Tutorial For Beginners | Edureka",
-        "u": "https://www.youtube.com/watch?v=ua-CiDNNj30"
+        "ti": "Data Structures and Algorithms Full Course - Beginners Tutorial",
+        "u": "https://www.youtube.com/watch?v=8hly31xKli0"
       },
       {
-        "ti": "Python Tutorial for Beginners - Full Course in 11 Hours [2022]",
-        "u": "https://www.youtube.com/watch?v=_uQrJ0TkZlc"
+        "ti": "Logic Building for Beginners",
+        "u": "https://www.youtube.com/watch?v=6u7J9Ykz1xk"
       }
     ]
   },
   {
     "w": 2,
-    "t": "Statistics and Probability Fundamentals",
-    "g": "Learn key statistical concepts and probability theory to analyze and interpret data effectively.",
+    "t": "Time and Space Complexity",
+    "g": "Learn to analyze the efficiency of algorithms using time and space complexity concepts.",
     "a": [
       {
-        "ti": "Statistics for Data Science",
-        "u": "https://www.geeksforgeeks.org/statistics-for-data-science/"
+        "ti": "Time Complexity Analysis",
+        "u": "https://www.geeksforgeeks.org/time-complexity-and-space-complexity-of-algorithms/"
       },
       {
-        "ti": "Probability Basics",
-        "u": "https://www.geeksforgeeks.org/probability-basics/"
+        "ti": "Space Complexity",
+        "u": "https://www.geeksforgeeks.org/space-complexity-of-algorithms/"
       }
     ],
     "v": [
       {
-        "ti": "Statistics for Data Science | Full Course | Statistics Tutorial | Simplilearn",
-        "u": "https://www.youtube.com/watch?v=xxpc-HPKN28"
+        "ti": "Time and Space Complexity Explained",
+        "u": "https://www.youtube.com/watch?v=92S4zgXN17o"
       },
       {
-        "ti": "Probability and Statistics for Data Science | Crash Course | Simplilearn",
-        "u": "https://www.youtube.com/watch?v=KbB0FjPg0IQ"
+        "ti": "Big O Notation and Algorithm Complexity",
+        "u": "https://www.youtube.com/watch?v=__vX2sjlpXU"
       }
     ]
   },
   {
     "w": 3,
-    "t": "Data Analysis and Visualization",
-    "g": "Explore data manipulation using Pandas and NumPy, and learn to visualize data with Matplotlib and Seaborn.",
+    "t": "Arrays",
+    "g": "Understand arrays as a linear data structure and learn basic operations on arrays.",
     "a": [
       {
-        "ti": "Pandas Tutorial for Beginners",
-        "u": "https://www.geeksforgeeks.org/python-pandas-tutorial/"
+        "ti": "Arrays - GeeksforGeeks",
+        "u": "https://www.geeksforgeeks.org/array-data-structure/"
       },
       {
-        "ti": "Data Visualization with Matplotlib",
-        "u": "https://www.geeksforgeeks.org/data-visualization-with-matplotlib/"
+        "ti": "Introduction to Arrays",
+        "u": "https://www.geeksforgeeks.org/introduction-to-arrays/"
       }
     ],
     "v": [
       {
-        "ti": "Python Pandas Tutorial (Data Analysis) | Data Science Tutorial | Edureka",
-        "u": "https://www.youtube.com/watch?v=vmEHCJofslg"
+        "ti": "Arrays Data Structure Tutorial",
+        "u": "https://www.youtube.com/watch?v=wjI1WNcIntg"
       },
       {
-        "ti": "Data Visualization with Matplotlib and Seaborn | Python Tutorial",
-        "u": "https://www.youtube.com/watch?v=0Lt9w-BxKFQ"
+        "ti": "Arrays in Data Structures",
+        "u": "https://www.youtube.com/watch?v=H2u7z2k6ZbY"
       }
     ]
   },
   {
     "w": 4,
-    "t": "Introduction to Machine Learning",
-    "g": "Understand basic machine learning concepts including supervised and unsupervised learning techniques.",
+    "t": "Searching Algorithms",
+    "g": "Learn fundamental searching algorithms including linear and binary search.",
     "a": [
       {
-        "ti": "Machine Learning Basics",
-        "u": "https://www.geeksforgeeks.org/machine-learning-basics/"
+        "ti": "Searching Algorithms - GeeksforGeeks",
+        "u": "https://www.geeksforgeeks.org/searching-algorithms/"
       },
       {
-        "ti": "Supervised vs Unsupervised Learning",
-        "u": "https://www.geeksforgeeks.org/supervised-vs-unsupervised-learning/"
+        "ti": "Binary Search",
+        "u": "https://www.geeksforgeeks.org/binary-search/"
       }
     ],
     "v": [
       {
-        "ti": "Machine Learning Full Course for Beginners | Machine Learning Tutorial | Edureka",
-        "u": "https://www.youtube.com/watch?v=Gv9_4yMHFhI"
+        "ti": "Binary Search Algorithm Tutorial",
+        "u": "https://www.youtube.com/watch?v=P3YID7liBug"
       },
       {
-        "ti": "Supervised vs Unsupervised Learning | Machine Learning Tutorial | Simplilearn",
-        "u": "https://www.youtube.com/watch?v=3Z3h6XhG8h0"
+        "ti": "Searching Algorithms Explained",
+        "u": "https://www.youtube.com/watch?v=0u78hx-66Xk"
       }
     ]
   },
   {
     "w": 5,
-    "t": "Big Data Technologies and Tools",
-    "g": "Get introduced to big data concepts and tools like Hadoop and Spark used to handle large datasets.",
+    "t": "Sorting Algorithms",
+    "g": "Understand and implement basic sorting algorithms like Bubble Sort, Selection Sort, and Insertion Sort.",
     "a": [
       {
-        "ti": "Introduction to Big Data",
-        "u": "https://www.geeksforgeeks.org/introduction-to-big-data/"
+        "ti": "Sorting Algorithms - GeeksforGeeks",
+        "u": "https://www.geeksforgeeks.org/sorting-algorithms/"
       },
       {
-        "ti": "Hadoop Tutorial for Beginners",
-        "u": "https://www.geeksforgeeks.org/hadoop-tutorial/"
+        "ti": "Bubble Sort",
+        "u": "https://www.geeksforgeeks.org/bubble-sort/"
       }
     ],
     "v": [
       {
-        "ti": "Big Data Full Course - Learn Big Data in 6 Hours | Big Data Tutorial | Edureka",
-        "u": "https://www.youtube.com/watch?v=5e6h1Zx0k7I"
+        "ti": "Sorting Algorithms Tutorial",
+        "u": "https://www.youtube.com/watch?v=ZZuD6iUe3Pc"
       },
       {
-        "ti": "Hadoop Tutorial for Beginners | Big Data Tutorial | Simplilearn",
-        "u": "https://www.youtube.com/watch?v=2aYw4vR2o6g"
+        "ti": "Bubble Sort Explained",
+        "u": "https://www.youtube.com/watch?v=8Kp-8OGwphY"
+      }
+    ]
+  },
+  {
+    "w": 6,
+    "t": "Hashing and Two Pointer Technique",
+    "g": "Learn the basics of hashing for efficient data retrieval and the two-pointer technique for array problems.",
+    "a": [
+      {
+        "ti": "Hashing in Data Structures",
+        "u": "https://www.geeksforgeeks.org/hashing-data-structure/"
+      },
+      {
+        "ti": "Two Pointer Technique",
+        "u": "https://www.geeksforgeeks.org/two-pointer-technique/"
+      }
+    ],
+    "v": [
+      {
+        "ti": "Hashing Data Structure Explained",
+        "u": "https://www.youtube.com/watch?v=shs0KM3wKv8"
+      },
+      {
+        "ti": "Two Pointer Technique Tutorial",
+        "u": "https://www.youtube.com/watch?v=K7-N8R0-KYw"
       }
     ]
   }

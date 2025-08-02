@@ -13,12 +13,17 @@ type Props = {
   questions: Question[];
 };
 
+/**
+ * Modal dialog that displays a set of multiple choice (True/False) questions.
+ */
 export default function QuizModal({ open, onClose, questions }: Props) {
+  // Local user interaction state
   const [answers, setAnswers] = useState<number[]>([]);
   const [current, setCurrent] = useState(0);
   const [submitted, setSubmitted] = useState(false);
   const [score, setScore] = useState<number | null>(null);
 
+  // Reset state when new quiz is loaded or modal opens
   React.useEffect(() => {
     if (open) {
       setAnswers(Array((questions || []).length).fill(-1));
@@ -40,7 +45,7 @@ export default function QuizModal({ open, onClose, questions }: Props) {
     setSubmitted(true);
   };
 
-  // Handle answer selection
+  // Handle answer selection for one question
   const handleSelect = (idx: number) => {
     setAnswers((a) => {
       const copy = [...a];
@@ -68,14 +73,14 @@ export default function QuizModal({ open, onClose, questions }: Props) {
           <button onClick={onClose} className="text-red-600 font-bold text-xl hover:text-red-800">×</button>
         </div>
 
-        {/* No quiz available */}
+        {/* If there are no valid questions */}
         {(questions.length === 0) && (
           <div className="text-center text-gray-600 py-8">
             No quiz available for this week.
           </div>
         )}
 
-        {/* Show question and choices */}
+        {/* Main quiz UI */}
         {questions[current] && (
           <>
             <div className="font-semibold text-gray-900 mb-2 text-lg">{questions[current].question}</div>

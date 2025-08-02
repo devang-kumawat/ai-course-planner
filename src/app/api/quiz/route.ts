@@ -1,24 +1,35 @@
 import { NextRequest, NextResponse } from "next/server";
-import { fetchFromPerplexity } from "../helperFunctions"; // Or .ts if appropriate
+import { fetchFromPerplexity } from "../helperFunctions"; // Import Perplexity utilities
 
+/**
+ * Calls Perplexity API with a prompt to generate 2 True/False quiz questions
+ * related to the given topic and goal.
+ * 
+ * @param topic The main topic string
+ * @param goal The detailed weekly learning goal
+ * @returns Promise resolving to an array of quiz question objects
+ */
 async function fetchQuizFromPerplexity(topic: string, goal: string) {
   const prompt = `
 You are a programming instructor.
 
 Generate 2 unique True/False quiz questions focusing on this topic and learning goal:
+
 - Topic: "${topic}"
 - Goal: "${goal}"
 
 Each should be a clear, factual statement directly relevant to this week's learning goal.
+
 Return a JSON array of 2 objects, each:
-  - "id": unique int (1 or 2)
-  - "question": the question string (short and clear)
-  - "choices": ["True", "False"]
-  - "answer": 0 or 1 (index of correct choice; 0 if 'True' is correct, 1 if 'False' is correct)
+- "id": unique int (1 or 2)
+- "question": the question string (short and clear)
+- "choices": ["True", "False"]
+- "answer": 0 or 1 (index of correct choice; 0 if 'True' is correct, 1 if 'False' is correct)
 
 ONLY return the JSON array, no explanation or commentary.
 `.trim();
 
+  // Use the shared fetchFromPerplexity helper
   const result = await fetchFromPerplexity(prompt);
   return result;
 }
@@ -29,6 +40,7 @@ export async function POST(req: NextRequest) {
   try {
     const questions = await fetchQuizFromPerplexity(topic, goal);
 
+    // Validate the response structure is as expected
     if (
       !Array.isArray(questions) ||
       !questions.every(
@@ -49,9 +61,12 @@ export async function POST(req: NextRequest) {
       );
     }
 
+    // Return valid quiz questions to the client
     return NextResponse.json({ questions });
   } catch (error: any) {
-    // Fallback: provide default questions
+    console.error("Quiz generation failed, falling back to defaults:", error);
+
+    // Provide fallback questions if Perplexity API fails
     return NextResponse.json({
       questions: [
         {
