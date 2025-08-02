@@ -58,14 +58,14 @@ Requirements:
     // console.log(JSON.stringify(weeklyPlan, null, 2));
     // Success: return the plan
     return NextResponse.json({ plan: weeklyPlan });
-  } catch (error: any) {
-    console.warn("Falling back to dummy json file due to Perplexity API error:", error.message);
+  } catch (error: unknown) {
+    console.warn("Falling back to dummy json file due to Perplexity API error:", error);
 
     try {
       const dummyPlan = await readDummyPlanFromFile();
       return NextResponse.json({ plan: dummyPlan, usingDummy: true });
-    } catch (fileError: any) {
-      console.error("Failed to load dummy schedule fallback:", fileError.message);
+    } catch (fileError: unknown) {
+      console.error("Failed to load dummy schedule fallback:", fileError);
       return NextResponse.json(
         { error: "Failed to generate schedule and fallback also failed" },
         { status: 500 }
