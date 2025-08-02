@@ -34,7 +34,7 @@ A personalized, multi-week AI-powered curriculum generator. Uses the Perplexity 
 
 ## Demo
 
-> *(Optional: Add your live demo link or screenshots here)*
+[Check here..](https://ai-course-planner-hdwc3tj17-devang-kumawats-projects.vercel.app/)
 
 ---
 
